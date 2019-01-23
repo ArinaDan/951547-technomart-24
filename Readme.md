@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Ri Dan](https://up.htmlacademy.ru/htmlcss/24/user/951547).
-* Наставник: [Артем Альтигин].
+* Наставник: [Артём Альтигин](https://htmlacademy.ru/profile/artem).
 
 ---
 

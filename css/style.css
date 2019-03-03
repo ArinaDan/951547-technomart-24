@@ -2089,6 +2089,13 @@ a.feedback:active ~ .write-us {
   right: 0;
 }
 
+.map iframe {
+  width: 940;
+  height: 446;
+  border: none;
+
+}
+
 .show-popup {
   display: block;
 }

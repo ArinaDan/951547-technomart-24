@@ -1,10 +1,10 @@
+if (document.querySelector(".feedback")) {
 var link = document.querySelector(".feedback");
 var popup = document.querySelector(".write-us");
 var close = popup.querySelector(".form-close");
 var form = popup.querySelector("form");
 var login = popup.querySelector("[name=name]");
 var mail = popup.querySelector("[name=mail]");
-
 
 link.addEventListener("click", function (evt) {
     evt.preventDefault();
@@ -27,7 +27,6 @@ form.addEventListener("submit", function (evt) {
     }})
 
 
-
 var openMap = document.querySelector(".maps");
 var map = document.querySelector(".popup.map");
 var closeMap = map.querySelector(".close");
@@ -41,25 +40,23 @@ closeMap.addEventListener("click", function (evt) {
     evt.preventDefault();
     map.classList.remove("show-popup");
   });
+};
 
 
+var buy = document.querySelectorAll(".buy");
+var cart = document.querySelector(".add-in-cart");
+var closeCart = cart.querySelector(".close.cart");
 
-//совершенно не понимаю почему это не работает!
-var body = document.body;
-var buy = body.querySelectorAll(".buy");
-var cart = body.querySelector(".add-in-cart");
-var closeCart = cart.querySelector(".close");
-
-buy.addEventListener("click", function (evt) {
+buy.forEach(function(elem) {
+	elem.addEventListener("click", function (evt) {
     evt.preventDefault();
-    cart.classList.add("show-popup");
-  });
+    cart.classList.add("show-popup");});
 
 closeCart.addEventListener("click", function (evt) {
     evt.preventDefault();
     cart.classList.remove("show-popup");
   });
 
-
+});
 
 

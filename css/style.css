@@ -151,7 +151,7 @@ a.feedback {
   text-transform: uppercase;
 }
 
-form legend {
+.filter legend {
   font-family: "PT Sans", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
   font-size: 17px;
@@ -160,7 +160,7 @@ form legend {
   text-transform: uppercase;
 }
 
-form label {
+.filter label {
   font-family: "PT Sans", "Arial", "Helvetica", sans-serif;
   font-size: 15px;
   line-height: 1.33;
@@ -168,7 +168,7 @@ form label {
   text-transform: uppercase;
 }
 
-form input:last-child,
+.filter input:last-child,
 .sorting,
 span.head  {
   font-family: "PT Sans", "Arial", "Helvetica", sans-serif;
@@ -385,22 +385,18 @@ svg.search {
 }
 
 label.in-focus {
-  display: none;
+  background-color: #ffffff;
+  color: #293449;
+}
+
+.in-focus > svg {
+  fill: #ee3643;
 }
 
 .header-container input:focus {
   background-color: #ffffff;
   color: #293449;
-}
-
-.header-container input:focus ~ label.in-focus {
-  display: block;
-  background-color: #ffffff;
-  color: #293449; 
-}
-
-.header-container input:focus ~ label:first-of-type {
-  display: none;
+  z-index: 1;
 }
 
 input[type="text"]:hover ~ label > svg {
@@ -409,6 +405,10 @@ input[type="text"]:hover ~ label > svg {
 
 input[type="text"]:focus ~ label > svg {
   fill: #ee3643;
+}
+
+input[type="text"]:focus ~ label {
+  background-color: #ffffff;
 }
 
 .header-container a:nth-of-type(2),
@@ -480,8 +480,8 @@ a:focus .header-svg {
 	display: inline-flex;
 	width: 100%;
 	flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 25px 0 22px;
+  justify-content: flex-start;
+  padding: 0 23px 0 22px;
   margin: 0;
  }
 
@@ -496,8 +496,11 @@ a:focus .header-svg {
   margin-right: -3px;
 }
 
+.main-navigation li:nth-of-type(3) {
+  margin-left: 2px;
+}
+
 .main-navigation li:nth-of-type(5) {
-  margin-left: -3px;
   margin-right: 3px;
 }
 
@@ -517,6 +520,7 @@ a:focus .header-svg {
 	width: 205px;
 	padding: 3px;
   margin: 0 65px 28px 50px;
+  white-space: pre-wrap;
 }
 
 .top-address {
@@ -529,6 +533,7 @@ a:focus .header-svg {
 
 .top-address a {
 	display: inline-block;
+  vertical-align: middle;
 	width: 270px;
 	box-sizing: border-box;
   border: 3px solid #ffffff;
@@ -610,6 +615,7 @@ a:focus .header-svg {
 
 a.user-navigation {
   display: inline-block;
+  vertical-align: middle;
   padding: 0 18px;
   position: relative;
 }
@@ -714,6 +720,7 @@ div.promo-sliders {
   position: relative;
   order: 4;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .promo-discount {
@@ -863,6 +870,7 @@ input[id="slider-two"]:checked ~ .promo-slider-one {
 	width: 60px;
 	height: 59px;
 	display: inline-block;
+  vertical-align: middle;
 	position: absolute;
   right: 0px;
   top: 0px;
@@ -881,6 +889,7 @@ input[id="slider-two"]:checked ~ .promo-slider-one {
   width: 940px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .head-section {
@@ -1024,6 +1033,7 @@ color: rgba(50, 66, 92, 0.3);
 
 .wrap > a {
   display: inline-block;
+  vertical-align: middle;
   overflow-wrap: break-word;
   background: #ee3643;
   min-width: 122px;
@@ -1042,16 +1052,6 @@ color: rgba(50, 66, 92, 0.3);
 
 }
 
-/*.modal a {
-  display: inline-block;
-  border: 3px solid green;
-  background: #ffffff;
-  color: #000000;
-  width: 122px;
-  padding: 10px 0;
-  text-align: center;
-}*/
-
 .wrap > a::after {
   content: "";
   width: 0;
@@ -1066,6 +1066,7 @@ color: rgba(50, 66, 92, 0.3);
 
 .item-name {
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
   margin: 10px auto auto auto;
   width: 160px;
@@ -1074,7 +1075,7 @@ color: rgba(50, 66, 92, 0.3);
 .main-popular-makers {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	margin-bottom: 65px;
 }
 
@@ -1085,6 +1086,7 @@ color: rgba(50, 66, 92, 0.3);
 .main-popular-makers a {
   display: flex;
   margin-bottom: 20px;
+  margin-right: 20px;
   width: 220px;
   height: 145px;
   border: 1px solid #eaeaea;
@@ -1092,7 +1094,24 @@ color: rgba(50, 66, 92, 0.3);
   justify-content: center;
 }
 
-.main-popular-makers a:nth-
+.main-popular-makers a:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+img[alt="Makita"] {
+  margin-top: -3px;
+}
+img[alt="Интерскол"] {
+  margin-top: -13px;
+}
+
+img[alt="HITACHI"] {
+  margin: 3px 0 0 3px;
+}
+
+img[alt="metabo"] {
+  margin: -7px 0 0 2px;
+}
 
 .main-popular-makers a:hover,
 .main-popular-makers a:focus {
@@ -1125,7 +1144,6 @@ color: rgba(50, 66, 92, 0.3);
 .about p:nth-of-type(2) {
   margin: 0;
   padding: 0;
-    text-align: justify;
 }
 
 .services-description h2 {
@@ -1158,6 +1176,7 @@ p.slider-shipping::after {
 	width: 468px;
 	height: 260px;
 	display: inline-block;
+  vertical-align: middle;
 	position: absolute;
   left: 152px;
   top: 25px;
@@ -1177,6 +1196,7 @@ p.slider-gaurantee::after {
   width: 389px;
   height: 283px;
   display: inline-block;
+  vertical-align: middle;
   position: absolute;
   left: 220px;
   top: 0px;
@@ -1196,6 +1216,7 @@ p.slider-credit::after {
   width: 465px;
   height: 280px;
   display: inline-block;
+  vertical-align: middle;
   position: absolute;
   left: 170px;
   top: 3px;
@@ -1213,7 +1234,7 @@ div.services-sliders {
   flex-direction: column;
   float: left;
   width: 240px;
-  margin-bottom: 100px;
+  margin-bottom: 98px;
   padding-right: 700px;
   position: relative;
 }
@@ -1230,14 +1251,14 @@ div.services-sliders::after {
 
 .services-sliders label {
 	display: inline-block;
+  vertical-align: middle;
 	font-size: 21px;
 	font-weight: bold;
 	line-height: 1.43;
   width: 240px; 
-  height: 61px;
+  
   background-color: #32425c;
-  padding-top: 16px;
-  padding-left: 22px;
+  padding: 16px 0 16px 22px;
   color: #ffffff;
   box-shadow: inset 0px -1px #405069, 0px 3px 0 0 #293449;
  }
@@ -1287,17 +1308,14 @@ div.hidden, .services-sliders input {
 }
 .about p:last-of-type {
   margin-top: 0;
-  margin-bottom: 19px;
+  margin-bottom: 18px;
 }
 
 .about p:first-of-type {
   margin-bottom: 24px;
-    text-align: justify;
 }
 
-.about p {
-  white-space: pre;
-}
+
 
 .about {
   width: 519px;
@@ -1330,7 +1348,7 @@ a.feedback {
 
 .contacts p {
 	margin-top: 10px;
-	margin-bottom: 32px;
+	margin-bottom: 31px;
 }
 
 .contacts img {
@@ -1339,6 +1357,7 @@ a.feedback {
 
 ul.transport {
 	display: inline-block;
+  vertical-align: middle;
 	position: relative;
 }
 
@@ -1354,6 +1373,7 @@ ul.transport {
 	border: 1px solid #ee3643;
 	width: 25px;
 	display: inline-block;
+  vertical-align: middle;
 	position: absolute;
   left: 0px;
   top: 12px;
@@ -1388,6 +1408,7 @@ footer .container {
 
 .logo-footer {
   display: inline-block;
+  vertical-align: middle;
   width: 220px;
   background-color: #ee3643;
   padding: 20px 41px 14px 41px;
@@ -1410,12 +1431,17 @@ p.footer-address {
 .footer-navigation-catalog {
 	display: flex;
 	flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .footer-navigation-anchors {
 	justify-content: flex-end;
 	width: 600px;
 	margin-bottom: 34px;
+}
+
+.footer-navigation-anchors li:nth-of-type(1) {
+  margin-left: -10px;
 }
 
 .footer-navigation-anchors li:last-of-type {
@@ -1555,6 +1581,7 @@ p.footer-address {
 
 .path a {
   display: inline-block;
+  vertical-align: middle;
   padding: 16px 40px 16px 0;
   position: relative;
 }
@@ -1611,8 +1638,9 @@ h2.catalog-page {
 
 }
 
- form .head {
+ .filter .head {
   display: inline-block;
+  vertical-align: middle;
   width: 100%;
   padding: 9px 17px 11px 19px;
   background-color: #f7f3ec;
@@ -1636,27 +1664,40 @@ h2.catalog-page {
 .box legend {
   padding-right: 80px;
   margin-left: -2px;
+  padding-bottom: 20px;
 }
 
-form fieldset {
+.power legend {
+  padding: 18px 0 3px 0;
+}
+
+.makers legend {
+  margin-top: 16px;
+  margin-bottom: -16px;
+}
+
+.filter fieldset {
   border: none;
   padding: 0;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .box.price {
-  flex-direction: row;
-  justify-content: space-between;
+  display: block;
   padding-bottom: 26px;
 }
 
-.box.price label {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  
+.box.makers {
+  padding-bottom: 12px;
+}
+
+.price .text-price {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
   font-size: 17px;
   line-height: 1.06;
-  vertical-align: center;
+
   margin: 9px 0 0 -1px;
   
   background-color: #f7f3ec; 
@@ -1666,29 +1707,25 @@ form fieldset {
   cursor: pointer;
 }
 
-.box.price input {
+.price input[type="text"] {
     width: 50px;
     margin: 0;
   text-align: center;
     color: inherit;
-    font: inherit;
+  font-family: "PT Sans", "Arial", "Helvetica", sans-serif;
+  font-size: 17px;
+  line-height: 1.06;
   padding: 10px 0;
     background-color: #f7f3ec;
     border: none;
   }
 
-.price label:first-of-type::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 0;
-  top: 20px;
-  right: -20px;
-  border: 1px solid #000000;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
+.price span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 7px;
+  margin-top: 10px;
 }
-
 
 .range-controls {
   position: relative;
@@ -1737,6 +1774,8 @@ form fieldset {
 }
 
 .sorting {
+  display: flex;
+  align-items: center;
   margin-bottom: 0;
   width: 700px;
   margin-left: 240px;
@@ -1754,6 +1793,7 @@ form fieldset {
 
 .sorting a {
   display: inline-block;
+  vertical-align: middle;
   position: relative;
   font-size: 13px;
   color: rgba(0, 0, 0, 0.3);
@@ -1805,8 +1845,6 @@ svg.checked:focus {
   fill: #ee3643;
 }
 
-
-
 .makers, .price {
   border-bottom: 1px solid #e5e5e5;
   padding-top: 20px;
@@ -1816,23 +1854,16 @@ svg.checked:focus {
   padding-bottom: 12px;
 }
 
-.makers legend{
-  padding-top: 16px;
-}
-
-.power legend {
-  padding: 18px 0 3px 0;
-}
-
-.makers legend {
-  margin-bottom: -16px;
-}
-
 .makers label, 
 .power label {
   padding: 10px 31px 10px 35px;
   margin-left: -2px;
   position: relative;
+}
+
+.makers input:focus + label,
+.power input:focus + label {
+  outline: 1px dotted grey;
 }
 
 input[type="checkbox"] ~ label > svg {
@@ -1853,6 +1884,20 @@ svg.on:focus, svg.off:focus {
   fill: #b5b5b5;
 }
 
+.makers input:disabled + label > .on,
+.makers input:disabled + label > .off {
+  fill: #eaeaea;
+}
+
+.makers input:disabled + label,
+.power input:disabled + label {
+  color: #eaeaea;
+}
+
+.power input:disabled + label::before, .powerinput:disabled + label::after {
+  border-color: #eaeaea;
+}
+
 .power label::before {
   content: "";
   position: absolute;
@@ -1864,7 +1909,7 @@ svg.on:focus, svg.off:focus {
   left: -1px;
 }
 
-form input[type="radio"]:checked + label::after {
+.filter input[type="radio"]:checked + label::after {
   content: "";
   position: absolute;
   width: 0;
@@ -1891,6 +1936,7 @@ input[name="result"] {
 
 .paginator a {
   display: inline-block;
+  vertical-align: middle;
   color: #000000;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
@@ -1933,7 +1979,7 @@ a.current {
 }
 
 .section-description p {
-  white-space: pre;
+
   width: 938px;
 }
 
@@ -2090,10 +2136,9 @@ a.feedback:active ~ .write-us {
 }
 
 .map iframe {
-  width: 940;
-  height: 446;
+  width: 940px;
+  height: 446px;
   border: none;
-
 }
 
 .show-popup {

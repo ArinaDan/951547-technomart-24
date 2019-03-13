@@ -45,7 +45,7 @@ closeMap.addEventListener("click", function (evt) {
 
 var buy = document.querySelectorAll(".buy");
 var cart = document.querySelector(".add-in-cart");
-var closeCart = cart.querySelector(".close.cart");
+var closeCart = document.querySelector(".close.cart");
 
 buy.forEach(function(elem) {
 	elem.addEventListener("click", function (evt) {
@@ -55,8 +55,6 @@ buy.forEach(function(elem) {
 closeCart.addEventListener("click", function (evt) {
     evt.preventDefault();
     cart.classList.remove("show-popup");
-  });
-
 });
-
+});
 

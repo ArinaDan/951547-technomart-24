@@ -20,6 +20,8 @@ close.addEventListener("click", function (evt) {
 form.addEventListener("submit", function (evt) {
     if (!login.value || !mail.value) {
     	evt.preventDefault();
+        popup.classList.remove("popup-error");
+        popup.offsetWidth = popup.offsetWidth;
         popup.classList.add("popup-error");
     }
        else {

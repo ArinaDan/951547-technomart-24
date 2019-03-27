@@ -2294,6 +2294,10 @@ input[type="checkbox"]:checked + label > svg.on {
   display: block;
 }
 
+input[type="checkbox"]:checked + label > svg.off {
+  display: none;
+}
+
 svg.on:hover, svg.off:hover,
 svg.on:focus, svg.off:focus {
   fill: #b5b5b5;

@@ -2053,7 +2053,9 @@ h2.catalog-page {
 }
 
 .power legend {
-  padding: 17px 0 16px 0;
+  padding: 24px 0 23px 0;
+
+  line-height: 1;
 }
 
 .box.power {

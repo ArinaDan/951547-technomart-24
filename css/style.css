@@ -2053,7 +2053,7 @@ h2.catalog-page {
 }
 
 .power legend {
-  padding: 17px 0 17px 0;
+  padding: 17px 0 16px 0;
 }
 
 .box.power {
@@ -2061,8 +2061,10 @@ h2.catalog-page {
 }
 
 .makers legend {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 21px;
+  padding-bottom: 23px;
+
+  line-height: 1;
 }
 
 .filter fieldset {
